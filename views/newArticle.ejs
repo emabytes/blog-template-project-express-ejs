@@ -1,0 +1,35 @@
+<%-include('./partials/headNav')%>
+
+<section id="new-article">
+    <h2>ADD NEW ARTICLE</h2>
+    <form action="/contactData" method="POST">
+        <input type="text" name="name" id="" placeholder="Title">
+        <input type="text" name="url" id="" placeholder="Url picture">
+        <input type="text" name="author" id="" placeholder="Author">
+        <input type="text" name="author-picture" id="" placeholder="Author">
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Write your article here"></textarea>
+        <input class="btn" type="submit" value="Send article">
+    </form>
+
+</section>
+<div class="line"></div>
+
+
+<section id="next">
+    <h4>What to read next</h4>
+    <div class="grid-wrap">
+        <% newArr.forEach(elt => { %>
+        <% if (elt.id !== 0) { %>
+        <article <%= elt.id %>>
+            <a href="#"><img src="images<%= elt.url %>" alt=""></img></a>
+            <h3><a href=""><%= elt.title %></a></h3>
+        </article>
+        <% } %>
+        <% }) %>
+    </div>
+</section>
+
+<%-include('./partials/footer')%>
+</body>
+
+</html>
