@@ -1,20 +1,20 @@
 const express = require("express")
 const app = express()
 const data = require("./data.json")
+const dataCopy = require("./dataCopy.json")
 const bodyParser = require('body-parser')
 
 //random 6 elements
-// const newArr = [];
-// for (let i = 0; i < 7; i++) {
-//     let random = Math.floor(Math.random() * data.length);
-//     newArr.push(data[random]);
-//     data.splice(random, 1);
-// }
-// console.log(newArr);
+const newArr = [];
+for (let i = 0; i < 6; i++) {
+    let random = Math.floor(Math.random() * dataCopy.length);
+    newArr.push(dataCopy[random]);
+    dataCopy.splice(random, 1);
+}
 
 //first 6 elements
-const newArr = data.slice(0, 7)
-console.log(newArr)
+// const newArr = data.slice(0, 7)
+// console.log(newArr)
 
 app.set("view engine", "ejs")
 app.use(express.static("public"))
