@@ -4,8 +4,8 @@
         <% newArr.forEach(elt => { %>
         <% if (elt.id !== 0) { %>
         <article <%= elt.id %>>
-            <a href="#"><img src="images<%= elt.url %>" alt=""></img></a>
-            <h3><a href=""><%= elt.title %></a></h3>
+            <a href="/blog/<%= elt.id %>"><img src="<%= elt.url %>" alt=""></img></a>
+            <h3><a href="/blog/<%= elt.id %>"><%= elt.title %></a></h3>
         </article>
         <% } %>
         <% }) %>
