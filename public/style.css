@@ -177,6 +177,9 @@ footer article h5 {
 
 #blog-item-section {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #blog-item-section img {
   width: 100%;
@@ -187,4 +190,23 @@ footer article h5 {
   font-size: 3.5em;
   font-family: "Poppins", sans-serif;
   padding: 3vh 0;
+}
+#blog-item-section .infos {
+  font-family: "Fira Code", monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 0;
+}
+#blog-item-section .author-img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin: 1em;
+}
+#blog-item-section p {
+  font-family: "Poppins", sans-serif;
+  padding: 3vh 0;
+  width: 50%;
+
 }
