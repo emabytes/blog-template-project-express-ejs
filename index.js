@@ -33,14 +33,14 @@ app.get("/newArticle", (req, res) => {
     res.render("newArticle", { title: "New Article", newArr: newArr })
 })
 
-app.post('/contactData', urlencodedParser, (req, res) => {
+app.post('/newArticleData', urlencodedParser, (req, res) => {
     console.log(req.body)
     console.log(req.body.name);
     console.log(req.body.url);
     console.log(req.body.author);
     console.log(req.body.message);
 
-    res.status(201).send("created")
+    res.status(201).redirect("/new")
 })
 
 app.use((req, res) => {
