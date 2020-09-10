@@ -3,6 +3,7 @@ const app = express()
 const data = require("./data.json")
 const dataCopy = require("./dataCopy.json")
 const bodyParser = require('body-parser')
+const PORT = process.env.PORT || 5050;
 
 //random 6 elements
 // const newArr = [];
@@ -21,7 +22,7 @@ app.use(express.static("public"))
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.listen(5050, () => {
+app.listen(PORT, () => {
     console.log("server at http://localhost:5050")
 })
 
