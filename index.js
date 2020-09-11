@@ -36,7 +36,7 @@ app.get("/newArticle", (req, res) => {
 
 app.get("/blog/:id", (req, res) => {
     console.log(req.params.id)
-    res.render("blogItem", { blogItem: data[req.params.id], data: data })
+    res.render("blogItem", { blogItem: data[req.params.id], data: data, newArr: newArr })
 })
 
 app.post('/newData', urlencodedParser, (req, res) => {

@@ -29,7 +29,7 @@ nav ul li a {
   border-bottom: 1px solid #000000;
 }
 .line {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #b3b3b3;
 }
 #all-articles {
   text-align: center;
@@ -50,11 +50,11 @@ nav ul li a {
   grid-column: 1/3;
   font-family: "Poppins", sans-serif;
 }
-
 #all-articles article:first-of-type::after {
   content: "All articles";
   font-size: 2em;
   width: 70%;
+  border-top: 2px solid #000000;
 }
 #all-articles a {
   color: #000000;
@@ -149,6 +149,11 @@ footer article h5 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+#new-article .btn:hover {
+  color: #000000;
+  background: #ffff;
+  border: 1px solid #000000;
+}
 
 #next {
   text-align: center;
@@ -158,6 +163,7 @@ footer article h5 {
   font-size: 2.5em;
   font-family: "Poppins", sans-serif;
   padding: 5vh 0;
+  border-top: 1px solid #000000;
 }
 #next .grid-wrap {
   display: grid;
@@ -176,10 +182,10 @@ footer article h5 {
 }
 
 #blog-item-section {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3vh;
 }
 #blog-item-section img {
   width: 100%;
@@ -190,13 +196,16 @@ footer article h5 {
   font-size: 3.5em;
   font-family: "Poppins", sans-serif;
   padding: 3vh 0;
+  text-align: center;
+  width: 70%;
 }
 #blog-item-section .infos {
   font-family: "Fira Code", monospace;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 3vh 0;
+
+  padding: 5vh 0 2vh 0;
+  width: 45%;
 }
 #blog-item-section .author-img {
   width: 3em;
@@ -206,7 +215,7 @@ footer article h5 {
 }
 #blog-item-section p {
   font-family: "Poppins", sans-serif;
-  padding: 3vh 0;
-  width: 50%;
-
+  font-weight: 300;
+  width: 45%;
+  padding-bottom: 5vh;
 }
