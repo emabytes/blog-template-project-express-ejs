@@ -1,21 +1,17 @@
 const express = require("express")
 const app = express()
 const data = require("./data.json")
-const dataCopy = require("./dataCopy.json")
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5050;
+const fs = require('fs')
 
-//random 6 elements
-// const newArr = [];
-// for (let i = 0; i < 6; i++) {
-//     let random = Math.floor(Math.random() * dataCopy.length);
-//     newArr.push(dataCopy[random]);
-//     dataCopy.splice(random, 1);
-// }
-
-//first 6 elements
-const newArr = data.slice(0, 7)
-// console.log(newArr)
+const newArr = []
+while (newArr.length < 6) {
+    let num = Math.floor(Math.random() * data.length)
+    if (!newArr.includes(num) && num != 0) {
+        newArr.push(num)
+    }
+}
 
 app.set("view engine", "ejs")
 app.use(express.static("public"))
@@ -58,6 +54,12 @@ app.post('/newData', urlencodedParser, (req, res) => {
     }
     console.log(newData)
     data.push(newData)
+
+    let newJsonData = JSON.stringify(data)
+    fs.writeFile("data.json", newJsonData, (err) => {
+        if (err) throw err
+        console.log("Written")
+    })
 
     res.status(201).redirect('/')
 })

@@ -180,6 +180,9 @@ footer article h5 {
 #next .grid-wrap h3 a {
   color: #000000;
 }
+#next img {
+  width: 100%;
+}
 
 #blog-item-section {
   display: flex;
@@ -203,7 +206,6 @@ footer article h5 {
   font-family: "Fira Code", monospace;
   display: flex;
   align-items: center;
-
   padding: 5vh 0 2vh 0;
   width: 45%;
 }
