@@ -4,6 +4,9 @@ const data = require("./data.json")
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5050;
 const fs = require('fs')
+const formidable = require("formidable")
+const path = require("path");
+const pathPictures = [];
 
 const newArr = []
 while (newArr.length < 6) {
@@ -14,6 +17,7 @@ while (newArr.length < 6) {
 }
 
 app.set("view engine", "ejs")
+app.use(express.static("uploads"));
 app.use(express.static("public"))
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -23,11 +27,14 @@ app.listen(PORT, () => {
 })
 
 app.get("/", (req, res) => {
-    res.status(200.).render("index", { data: data })
+    res.status(200.).render("index", { data: data, pathPictures: pathPictures })
 })
 
 app.get("/newArticle", (req, res) => {
     res.render("newArticle", { newArr: newArr, data: data })
+})
+app.get("/uploadFile", (req, res) => {
+    res.render("uploadFile", { newArr: newArr, data: data })
 })
 
 app.get("/blog/:id", (req, res) => {
@@ -60,6 +67,13 @@ app.post('/newData', urlencodedParser, (req, res) => {
         if (err) throw err
         console.log("Written")
     })
+
+    res.status(201).redirect('/')
+})
+
+app.post("/blogs/upload", (req, res, next) => {
+    const form = formidable({ multiples: true, uploadDir: "./uploads", keepExtensions: true });
+
 
     res.status(201).redirect('/')
 })

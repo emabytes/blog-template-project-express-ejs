@@ -4,6 +4,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 a {
   text-decoration: none;
@@ -24,6 +25,10 @@ nav ul {
 nav ul li a {
   padding: 0 3em;
   color: #000000;
+  transition: all 0.5s;
+}
+nav ul li a:hover{
+  color: #8e8e8e;
 }
 .active {
   border-bottom: 1px solid #000000;
@@ -148,6 +153,7 @@ footer article h5 {
   color: #ffff;
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: all 0.5s;
 }
 #new-article .btn:hover {
   color: #000000;
@@ -163,7 +169,7 @@ footer article h5 {
   font-size: 2.5em;
   font-family: "Poppins", sans-serif;
   padding: 5vh 0;
-  border-top: 1px solid #000000;
+  /* border-top: 1px solid #000000; */
 }
 #next .grid-wrap {
   display: grid;
@@ -182,6 +188,7 @@ footer article h5 {
 }
 #next img {
   width: 100%;
+  height: 25vh;
 }
 
 #blog-item-section {
@@ -220,4 +227,50 @@ footer article h5 {
   font-weight: 300;
   width: 45%;
   padding-bottom: 5vh;
+}
+#not-found {
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0;
+}
+#not-found img {
+  height: 45vh;
+}
+
+#upload-section {
+  text-align: center;
+  padding: 2em;
+  padding: 5vh 5%;
+}
+#upload-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 3vh 0;
+}
+#upload-section form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+}
+#upload-section input, textarea {
+  background: rgba(51, 51, 51, 0.2);
+  color: rgba(51, 51, 51, 0.5);
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  width: 100%;
+}
+#upload-section .btn {
+  background: #000000;
+  color: #ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+#upload-section .btn:hover {
+  color: #000000;
+  background: #ffff;
+  border: 1px solid #000000;
 }
